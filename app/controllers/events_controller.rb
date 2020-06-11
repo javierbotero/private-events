@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :required_user, only: [:new]
 
-  def new;	end
+  def new; end
 
   def index
     @events = Event.all.order(created_at: :DESC)
