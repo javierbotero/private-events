@@ -7,13 +7,11 @@
     <p class="badge badge-primary"><%= user.username %></p><br>
   <% end %>
   <hr class="my-4">
-  <p><%= @event.date %></p>
-  <%= form_for(:users, url: login_path, role: "form")do |f| %>
-  <% users = @users  %>
-    <% @users.each do |user| %>
-<%= f.check_box :users, {multiple: true }, user%>
+  <%= form_for(:users, :html => {class: "form-horizontal  ", role: "form"},url: events_update_path, method: 'post') do |f| %>
 
-    <% end %>
-  <%end%>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Confirm</a>
+
+  <%= submit_tag("Invite") %>
+
+<% end %>
+  
 </div>
