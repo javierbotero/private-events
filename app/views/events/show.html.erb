@@ -8,5 +8,12 @@
   <% end %>
   <hr class="my-4">
   <p><%= @event.date %></p>
+  <%= form_for(:users, url: login_path, role: "form")do |f| %>
+  <% users = @users  %>
+    <% @users.each do |user| %>
+<%= f.check_box :users, {multiple: true }, user%>
+
+    <% end %>
+  <%end%>
   <a class="btn btn-primary btn-lg" href="#" role="button">Confirm</a>
 </div>
