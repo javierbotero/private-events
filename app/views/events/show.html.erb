@@ -7,11 +7,10 @@
     <p class="badge badge-primary"><%= user.username %></p><br>
   <% end %>
   <hr class="my-4">
-  <%= form_for(:users, :html => {class: "form-horizontal  ", role: "form"},url: events_update_path, method: 'post') do |f| %>
+  <%= form_for(:event, :html => {class: "form-horizontal  ", role: "form"},url: events_update_path, method: 'post') do |f| %>
 
+    <% event: @event.id %>
+    <%= submit_tag("Invite") %>
 
-  <%= submit_tag("Invite") %>
-
-<% end %>
-  
+  <% end %>
 </div>

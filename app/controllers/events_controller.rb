@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   before_action :required_user, only: [:new]
+  before_action :require_all_users, only: [:new, :create]
 
   def new
-    @users = User.where.not(id: current_user.id)
+    
   end
 
   def index
@@ -11,10 +12,9 @@ class EventsController < ApplicationController
 
   def create
     event = current_user.events.build(event_params)
-    users = User.where.not(id:current_user.id)
-    if event.save && attendanse_params != ['0'] 
+    if event.save && attendanse_params != ['0']
       flash[:success] = 'Event created successfully!'
-      attendanse_params.each do |user|
+      attendanse_params[0..-2].each do |user|
         a = event.user_attendees.build(attendee_id: user.to_i)
         a.save
       end
@@ -42,5 +42,9 @@ class EventsController < ApplicationController
 
   def attendanse_params
     params.require(:attendees)
+  end
+
+  def require_all_users
+    @users = User.where.not(id: current_user.id)
   end
 end
