@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :required_user, only: [:new]
-  before_action :require_all_users, only: [:new, :create]
+  before_action :require_all_users, only: [:new, :create, :update]
 
   def new
     
@@ -31,7 +31,8 @@ class EventsController < ApplicationController
   end
 
   def update
-    debugger
+    @current_event = Event.find_by(params[:event_id])
+
   end
 
   protected
