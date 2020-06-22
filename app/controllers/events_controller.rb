@@ -1,9 +1,8 @@
 class EventsController < ApplicationController
   before_action :required_user, only: [:new]
-  before_action :require_all_users, only: [:new, :create, :update]
+  before_action :require_all_users, only: %i[new create update]
 
-  def new
-  end
+  def new; end
 
   def index
     @events = Event.all.order(created_at: :DESC)
@@ -19,7 +18,7 @@ class EventsController < ApplicationController
       end
       redirect_to event_path(event)
     else
-      flash[:danger] = "Event did not created!"
+      flash[:danger] = 'Event did not created!'
       render 'new'
     end
   end
@@ -31,7 +30,6 @@ class EventsController < ApplicationController
 
   def update
     @current_event = Event.find_by(params[:event_id])
-
   end
 
   protected

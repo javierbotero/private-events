@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :attended_events, through: :user_attendees
   has_secure_password :recovery_password, validations: false
 
-  
   def upcoming_events
     attended_events.where('events.date > ?', Time.current)
   end

@@ -31,6 +31,8 @@ In order to start with the project:
     - rails db:migrate
 5. Run the rails server
     - rails server
+6. Run the rails tests
+    - rails test
 
 
 ## Authors
@@ -45,7 +47,7 @@ In order to start with the project:
 👤 **Javier Botero**
 
 - Github: [@Javierbotero](https://github.com/javierbotero)
-- Twitter: [@@Javierbotero1](https://twitter.com/JavierBotero1)
+- Twitter: [@Javierbotero1](https://twitter.com/JavierBotero1)
 - Linkedin: [Javierbotero](https://www.linkedin.com/in/javier-botero-044686155/)
 
 
