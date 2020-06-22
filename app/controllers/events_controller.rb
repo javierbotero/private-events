@@ -3,7 +3,6 @@ class EventsController < ApplicationController
   before_action :require_all_users, only: [:new, :create, :update]
 
   def new
-    
   end
 
   def index
@@ -20,7 +19,7 @@ class EventsController < ApplicationController
       end
       redirect_to event_path(event)
     else
-      flash[:danger] = "Event didn't created!"
+      flash[:danger] = "Event did not created!"
       render 'new'
     end
   end

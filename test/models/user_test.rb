@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'user should be valid' do
+    @user = User.new(username: "Bekhzod")
+    assert @user.valid?
+  end
 end
