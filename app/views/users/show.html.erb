@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="display-6">Welcome, <%= @user.username %>!</h1>
+</div>
+
+<%= render 'attended' %>
+
+<div class="jumbotron">
+  <h1 class="display-6"><%= @user.username %>'s Created Events!</h1>
+</div>
+
+<%= render 'created' %>
+

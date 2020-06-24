@@ -1,0 +1,14 @@
+<h3 class="text-info text-center" >Invite People</h3>
+
+<div class="row col-12 my-4">
+<div class="form-check form-check-inline col-md-5 offset-2">
+
+	<% @users.each do |user| %>
+		<span class="mx-2 mb-1 btn">
+			<%= check_box_tag 'attendees[]', user.id %>
+		</span> 
+		<h5><%= user.username %></h5>
+	<% end %>
+	<%= hidden_field_tag 'attendees[]', '0' %>
+</div>
+</div>
